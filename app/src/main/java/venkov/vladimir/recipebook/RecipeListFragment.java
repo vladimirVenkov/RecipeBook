@@ -17,16 +17,19 @@ import java.util.List;
 import java.util.Map;
 
 import venkov.vladimir.recipebook.Recipe.Recipe;
+import venkov.vladimir.recipebook.repositories.Base.Repository;
+import venkov.vladimir.recipebook.repositories.FirebaseRepository;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class RecipeListFragment extends Fragment implements AdapterView.OnItemClickListener {
-private Map<String, Recipe> mListOfRecipies;
+    private Map<String, Recipe> mListOfRecipies;
     private ListView mRecipeListView;
     private ArrayAdapter<String> mListOfRecipiesAdapter;
     private OnRecipeItemClickListener mOnRecipeItemClickListener;
+    private Repository<Recipe> mFirebaseRepository;
 
     public RecipeListFragment() {
         // Required empty public constructor
@@ -39,15 +42,27 @@ private Map<String, Recipe> mListOfRecipies;
                 android.R.layout.simple_list_item_1
         );
         mListOfRecipies = new HashMap<>();
-        addRecipe("Mashed potatoes",
-                "potatoes",
-                "1.boiling;\n2.mashing" );
-        addRecipe("Princess",
-                "1.bread;\n2. yellow cheese",
-                "1.put yellow cheese on the bread and\n2.bake");
-        addRecipe("Tarator",
-                "1. cucumbers;\n2. kiselo mlqko;\n3. garlic",
-                "1. cut the cucumbers to small cubes;\n2. Mash the garlic;\n3. Stir everything");
+        mFirebaseRepository = new FirebaseRepository<>(Recipe.class);
+
+        mFirebaseRepository.getAll(recipes -> {
+            for (Recipe recipe : recipes) {
+                mListOfRecipiesAdapter.add(recipe.name);
+                mListOfRecipies.put(recipe.name, recipe);
+            }
+        });
+
+
+
+//
+//        addRecipe("Mashed potatoes",
+//                "potatoes",
+//                "1.boiling;\n2.mashing" );
+//        addRecipe("Princess",
+//                "1.bread;\n2. yellow cheese",
+//                "1.put yellow cheese on the bread and\n2.bake");
+//        addRecipe("Tarator",
+//                "1. cucumbers;\n2. kiselo mlqko;\n3. garlic",
+//                "1. cut the cucumbers to small cubes;\n2. Mash the garlic;\n3. Stir everything");
 
         //mListOfRecipies.forEach(x -> mListOfRecipiesAdapter.add(x.getName()));
 
