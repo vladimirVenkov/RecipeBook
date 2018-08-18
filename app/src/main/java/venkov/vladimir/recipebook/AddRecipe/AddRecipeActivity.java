@@ -1,29 +1,32 @@
-package venkov.vladimir.recipebook.ListAllRecipe;
+package venkov.vladimir.recipebook.AddRecipe;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import venkov.vladimir.recipebook.ListAllRecipe.ListAllFragment;
 import venkov.vladimir.recipebook.R;
 import venkov.vladimir.recipebook.views.BaseDrawerActivity;
 
-public class ListAllActivity extends BaseDrawerActivity{
+public class AddRecipeActivity extends BaseDrawerActivity {
 
-    public static final long IDENTIFIER = 1;
-    private ListAllFragment mListAllFragment;
+    public static final long IDENTIFIER = 5;
     private Toolbar mToolbar;
+    private AddRecipeFragment mAddRecipeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_all);
-
+        setContentView(R.layout.activity_add_recipe);
         mToolbar = findViewById(R.id.drawer_toolbar);
         setSupportActionBar(mToolbar);
-        mListAllFragment = ListAllFragment.newInstance();
+
+        mAddRecipeFragment = AddRecipeFragment.newInstance();
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.listAll, mListAllFragment)
+                .replace(R.id.addRecipe, mAddRecipeFragment)
                 .commit();
+
     }
 
     @Override

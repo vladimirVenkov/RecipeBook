@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRecipe.AddRecipeFragment">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <TextView
+           android:id="@+id/title_add_text"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/add_recipe_here_String"
+           android:textSize="20sp"
+           android:gravity="center"
+           />
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/enter_name_recipe"
+           android:layout_below="@id/title_add_text"
+           android:hint="@string/add_recipe_name_here"
+           android:maxLength="22"
+           android:inputType="textCapWords" />
+
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/enter_ingredients_recipe"
+           android:layout_below="@id/enter_name_recipe"
+           android:hint="@string/add_recipe_ingredients_here"
+           android:maxLength="1000"
+           android:inputType="text" />
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/enter_cooking_operations_recipe"
+           android:layout_below="@id/enter_ingredients_recipe"
+           android:hint="@string/add_recipe_cooking_operations_here"
+           android:maxLength="2000"
+           android:inputType="text" />
+
+
+       <Button
+           android:id="@+id/add_button_recipe"
+           android:layout_below="@id/enter_cooking_operations_recipe"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/add_first_recipe"
+           android:textSize="12sp" />
+
+   </RelativeLayout>
+
+
+</FrameLayout>

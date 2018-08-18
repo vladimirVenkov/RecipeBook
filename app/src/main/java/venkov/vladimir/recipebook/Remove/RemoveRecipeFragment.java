@@ -1,6 +1,7 @@
 package venkov.vladimir.recipebook.Remove;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import venkov.vladimir.recipebook.R;
+import venkov.vladimir.recipebook.Recipe.Recipe;
 import venkov.vladimir.recipebook.RecipeListFragment;
+import venkov.vladimir.recipebook.details.RecipeDetailsActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RemoveRecipeFragment extends Fragment {
+public class RemoveRecipeFragment extends Fragment implements RecipeListFragment.OnRecipeItemClickListener{
 
 
     private RecipeListFragment mRecipeListFragment;
@@ -34,11 +37,22 @@ public class RemoveRecipeFragment extends Fragment {
                 .replace(R.id.remove_Fragment, mRecipeListFragment)
                 .commit();
 
+        mRecipeListFragment.setOnRecipeItemClickListener(this);
 
         return view;
     }
 
     public static RemoveRecipeFragment newInstance() {
         return new RemoveRecipeFragment();
+    }
+
+    @Override
+    public void onClick(Recipe recipe) {
+        Intent intent = new Intent(
+                getContext(),
+                RecipeDetailsActivity.class
+        );
+        intent.putExtra("NAME_Recipe", recipe);
+        startActivity(intent);
     }
 }

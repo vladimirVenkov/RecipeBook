@@ -45,4 +45,13 @@ public class FirebaseRepository<T> implements Repository<T> {
                     action.accept(item);
                 });
     }
+
+    @Override
+    public void remove(T item, Consumer<T> action) {
+//        mDb.collection(mCollectionName)
+//                .remove(item)//todo how?
+//                .addOnCompleteListener(task -> {
+//                    action.accept(item);
+//                });
+    }
 }

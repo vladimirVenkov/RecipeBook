@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">RecipeBook</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add_recipe_here_String">Add Recipe Here</string>
+    <string name="add_first_recipe">Add This Recipe</string>
+    <string name="add_recipe_cooking_operations_here">Add Recipe Cooking Operations Here</string>
+    <string name="add_recipe_ingredients_here">Add Recipe Ingredients Here</string>
+    <string name="add_recipe_name_here">Add Recipe Name Here</string>
 </resources>

@@ -8,4 +8,6 @@ public interface Repository<T> {
     void getAll(Consumer<List<T>> action);
 
     void add(T item, Consumer<T> action);
+
+    void remove(T item, Consumer<T> action);
 }
