@@ -22,8 +22,8 @@
            android:id="@+id/enter_name_recipe"
            android:layout_below="@id/title_add_text"
            android:hint="@string/add_recipe_name_here"
-           android:maxLength="22"
-           android:inputType="textCapWords" />
+           android:inputType="textCapWords"
+           android:maxLength="22"/>
 
        <EditText
            android:layout_width="match_parent"
