@@ -1,10 +1,8 @@
 package venkov.vladimir.recipebook.AddRecipe;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import venkov.vladimir.recipebook.ListAllRecipe.ListAllFragment;
 import venkov.vladimir.recipebook.R;
 import venkov.vladimir.recipebook.views.BaseDrawerActivity;
 
@@ -26,7 +24,6 @@ public class AddRecipeActivity extends BaseDrawerActivity {
                 .beginTransaction()
                 .replace(R.id.addRecipe, mAddRecipeFragment)
                 .commit();
-
     }
 
     @Override

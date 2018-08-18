@@ -1,6 +1,5 @@
 package venkov.vladimir.recipebook.Remove;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -13,9 +12,6 @@ import venkov.vladimir.recipebook.Recipe.Recipe;
 import venkov.vladimir.recipebook.RecipeListFragment;
 import venkov.vladimir.recipebook.details.RecipeDetailsActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RemoveRecipeFragment extends Fragment implements RecipeListFragment.OnRecipeItemClickListener{
 
 

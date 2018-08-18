@@ -18,7 +18,6 @@ import venkov.vladimir.recipebook.Remove.RemoveRecipeActivity;
 public abstract class BaseDrawerActivity extends AppCompatActivity {
 
     public void setupDrawer() {
-        //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem listAllRecipeItem = new PrimaryDrawerItem()
                 .withIdentifier(ListAllActivity.IDENTIFIER)
                 .withName("List All Recipe");
@@ -44,7 +43,7 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        // do something with the clicked item :D
+
                         long identifier = drawerItem.getIdentifier();
                         if (getIdentifier() == identifier) {
                             return false;
@@ -53,7 +52,6 @@ public abstract class BaseDrawerActivity extends AppCompatActivity {
                         if (intent == null) {
                             return false;
                         }
-
                         startActivity(intent);
                         return true;
                     }

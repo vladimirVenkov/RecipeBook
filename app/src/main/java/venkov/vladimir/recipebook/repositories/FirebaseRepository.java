@@ -21,7 +21,7 @@ public class FirebaseRepository<T> implements Repository<T> {
         //if T is Other -> collection would be others
     }
     @Override
-    public void getAll(Consumer action) {//todo why is this giving an error if done like in the video?
+    public void getAll(Consumer action) {
         mDb.collection(mCollectionName)
                 .get()
                 .addOnCompleteListener(task -> {
@@ -38,12 +38,10 @@ public class FirebaseRepository<T> implements Repository<T> {
 //    }
 
     @Override
-    public void add(Object item, Consumer action) { //todo why is this giving an error if done like in the video?
+    public void add(Object item, Consumer action) {
         mDb.collection(mCollectionName)
                 .add(item)
-                .addOnCompleteListener(task -> {
-                    action.accept(item);
-                });
+                .addOnCompleteListener(task -> action.accept(item));
     }
 
     @Override

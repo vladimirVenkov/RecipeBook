@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 
 import venkov.vladimir.recipebook.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class RemoveThisRecipeFragment extends Fragment {
 
 
@@ -23,9 +21,8 @@ public class RemoveThisRecipeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_remove_this_recipe, container, false);
-
+        //todo text field - remove recipe
 
         return view;
     }

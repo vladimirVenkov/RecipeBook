@@ -1,6 +1,5 @@
 package venkov.vladimir.recipebook.Remove;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 

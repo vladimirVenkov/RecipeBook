@@ -16,9 +16,6 @@ import venkov.vladimir.recipebook.Recipe.Recipe;
 import venkov.vladimir.recipebook.repositories.Base.Repository;
 import venkov.vladimir.recipebook.repositories.FirebaseRepository;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AddRecipeFragment extends Fragment {
     private Repository<Recipe> mFirebaseRepository;
     private TextView mTextView;
@@ -41,11 +38,7 @@ public class AddRecipeFragment extends Fragment {
         mButton = view.findViewById(R.id.add_button_recipe);
         mFirebaseRepository = new FirebaseRepository<>(Recipe.class);
 
-
-       // createRecipe(view);
-
-
-        mButton.setOnClickListener(view1 -> {
+        mButton.setOnClickListener((View view1) -> {
             mName = view.findViewById(R.id.enter_name_recipe);
             mIngredients = view.findViewById(R.id.enter_ingredients_recipe);
             mCookingOperations = view.findViewById(R.id.enter_cooking_operations_recipe);
@@ -53,31 +46,14 @@ public class AddRecipeFragment extends Fragment {
                     mIngredients.getText().toString(),
                     mCookingOperations.getText().toString());
             mFirebaseRepository.add(mRecipe, mRecipe -> {});
-            Toast toast = Toast.makeText(getContext(), mRecipe.getName() + "added to your list!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getContext(),
+                    mRecipe.getName() + "added to your list!",
+                    Toast.LENGTH_SHORT);
             toast.show();
         });
 
-
-    //mButton.setOnClickListener(view1 -> mFirebaseRepository.add(mRecipe, mRecipe -> {}));
-    //mFirebaseRepository.add(mRecipe, mRecipe -> {});
-
         return view;
 }
-
-    private void createRecipe(View view) {
-        mName = view.findViewById(R.id.enter_name_recipe);
-        mIngredients = view.findViewById(R.id.enter_ingredients_recipe);
-        mCookingOperations = view.findViewById(R.id.enter_cooking_operations_recipe);
-        mRecipe = new Recipe(mName.getText().toString(),
-                mIngredients.getText().toString(),
-                mCookingOperations.getText().toString());
-    }
-
-//    private void createRecipe(View view) {
-//        mRecipe = new Recipe("Mashed potatoes",
-//                "potatoes",
-//                "1.boiling;\n2.mashing" );
-//    }
 
     public static AddRecipeFragment newInstance() {
         return new AddRecipeFragment();

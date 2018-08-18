@@ -5,7 +5,6 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
@@ -17,6 +16,7 @@ import venkov.vladimir.recipebook.R;
 
 public class CustomBookView extends View {
 
+    private static final int PADDING = 27;
     private Bitmap mImage;
 
     public CustomBookView(Context context) {
@@ -49,19 +49,14 @@ public class CustomBookView extends View {
         }
 
 
-
        getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
            @Override
            public void onGlobalLayout() {
                getViewTreeObserver().removeOnGlobalLayoutListener(this);
-               int padding = 50;
-               mImage = getResizedImage(mImage, getWidth() - padding , getHeight() - padding);
+               mImage = getResizedImage(mImage, getWidth() - PADDING , getHeight() - PADDING);
            }
        });
 
-        if (set == null) {
-            return;
-        }
     }
 
     private Bitmap getResizedImage(Bitmap image, int width, int height) {

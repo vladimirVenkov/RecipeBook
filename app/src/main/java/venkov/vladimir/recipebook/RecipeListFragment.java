@@ -34,7 +34,7 @@ public class RecipeListFragment extends Fragment implements AdapterView.OnItemCl
 
     private void init() {
 
-        mListOfRecipiesAdapter = new ArrayAdapter<String>(
+        mListOfRecipiesAdapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_list_item_1
         );
@@ -47,35 +47,17 @@ public class RecipeListFragment extends Fragment implements AdapterView.OnItemCl
                 mListOfRecipies.put(recipe.name, recipe);
             }
         });
-
-
-
-//
-//        addRecipe("Mashed potatoes",
-//                "potatoes",
-//                "1.boiling;\n2.mashing" );
-//        addRecipe("Princess",
-//                "1.bread;\n2. yellow cheese",
-//                "1.put yellow cheese on the bread and\n2.bake");
-//        addRecipe("Tarator",
-//                "1. cucumbers;\n2. kiselo mlqko;\n3. garlic",
-//                "1. cut the cucumbers to small cubes;\n2. Mash the garlic;\n3. Stir everything");
-
-        //mListOfRecipies.forEach(x -> mListOfRecipiesAdapter.add(x.getName()));
-
-
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_recipe_list, container, false);
         mRecipeListView = view.findViewById(R.id.lv_recipe_list);
 
         init();
-
 
         mRecipeListView.setAdapter(mListOfRecipiesAdapter);
         mRecipeListView.setOnItemClickListener(this);
@@ -83,30 +65,15 @@ public class RecipeListFragment extends Fragment implements AdapterView.OnItemCl
         return view;
     }
 
-    private void addRecipe(String name, String ingredients, String cookingOperations) {
-        mListOfRecipies.put(name, new Recipe(name, ingredients, cookingOperations));
-        mListOfRecipiesAdapter.add(name);
-    }
-
-    private void deleteRecipe(Recipe thisRecipe) {
-        mListOfRecipies.remove(thisRecipe);
-        mListOfRecipiesAdapter.remove(thisRecipe.getName());
-    }
-
-
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         //position which was clicked in the adapter
         String keyName = mListOfRecipiesAdapter.getItem(position);
         Recipe recipe = mListOfRecipies.get(keyName);
-//        view.findViewById()
         mOnRecipeItemClickListener.onClick(recipe);
     }
 
     public void setOnRecipeItemClickListener(OnRecipeItemClickListener listener) {
-
-        // ListAll....
-        //  mRecipeListFragment.setOnRecip.....Click(this);
         mOnRecipeItemClickListener = listener;
     }
 
@@ -115,6 +82,6 @@ public class RecipeListFragment extends Fragment implements AdapterView.OnItemCl
     }
 
     public interface OnRecipeItemClickListener {
-        public void onClick(Recipe recipe);
+        void onClick(Recipe recipe);
     }
 }

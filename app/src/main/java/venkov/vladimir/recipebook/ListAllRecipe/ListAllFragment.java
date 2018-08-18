@@ -1,9 +1,9 @@
 package venkov.vladimir.recipebook.ListAllRecipe;
 
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +12,7 @@ import venkov.vladimir.recipebook.R;
 import venkov.vladimir.recipebook.Recipe.Recipe;
 import venkov.vladimir.recipebook.RecipeListFragment;
 import venkov.vladimir.recipebook.details.RecipeDetailsActivity;
-import venkov.vladimir.recipebook.details.RecipeDetailsFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ListAllFragment extends Fragment implements RecipeListFragment.OnRecipeItemClickListener {
 
 
@@ -30,7 +26,6 @@ public class ListAllFragment extends Fragment implements RecipeListFragment.OnRe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_all, container, false);
         mRecipeListFragment = RecipeListFragment.newInstance();
 

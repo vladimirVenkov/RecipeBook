@@ -12,9 +12,6 @@ import android.widget.ListView;
 import venkov.vladimir.recipebook.R;
 import venkov.vladimir.recipebook.Recipe.Recipe;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RecipeDetailsFragment extends Fragment {
     private Recipe mRecipe;
     private ArrayAdapter<String> mRecipeAdapter;
@@ -29,7 +26,6 @@ public class RecipeDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recipe_details, container, false);
 
         mRecipeView = view.findViewById(R.id.lv_recipe_details);

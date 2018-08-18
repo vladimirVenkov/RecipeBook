@@ -6,7 +6,7 @@ public class Recipe implements Serializable{
     public String name;
     public String ingredients;
     public String cookingOperations; //public needed for firebase
-    //todo firebase video 22min List<Recipe> recipesList = task.getresult().toObjects(Recipe.class);
+
 
     public Recipe() {
         //needed for firebase
