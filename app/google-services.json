@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "934792727960",
+    "firebase_url": "https://recipebook-6ebe1.firebaseio.com",
+    "project_id": "recipebook-6ebe1",
+    "storage_bucket": "recipebook-6ebe1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934792727960:android:c280b6644ec0b76b",
+        "android_client_info": {
+          "package_name": "venkov.vladimir.recipebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934792727960-v9c7nb9ea1sp71losespuehavuogrodu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "venkov.vladimir.recipebook",
+            "certificate_hash": "1bbd73d8802cfd9f689a2db81756134d68f6937f"
+          }
+        },
+        {
+          "client_id": "934792727960-05gcdftr51kte5ceatfu2empn1qsdeps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMjY6RFULSSOofu64JzH__pd1kZLIVGKc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934792727960-05gcdftr51kte5ceatfu2empn1qsdeps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
