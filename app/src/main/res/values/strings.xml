@@ -7,4 +7,7 @@
     <string name="add_recipe_cooking_operations_here">Add Recipe Cooking Operations Here</string>
     <string name="add_recipe_ingredients_here">Add Recipe Ingredients Here</string>
     <string name="add_recipe_name_here">Add Recipe Name Here</string>
+    <string name="are_you_sure">ARE YOU SURE ?</string>
+    <string name="yes_i_am_sure_delete_this_recipe">YES, I Am Sure! Delete This Recipe!</string>
+    <string name="no_i_don_t_want_to_delete_this_recipe">NO, I Don\'t Want to Delete This Recipe!</string>
 </resources>

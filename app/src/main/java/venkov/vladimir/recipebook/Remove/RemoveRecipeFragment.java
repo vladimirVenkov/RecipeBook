@@ -49,6 +49,7 @@ public class RemoveRecipeFragment extends Fragment implements RecipeListFragment
                 RecipeDetailsActivity.class
         );
         intent.putExtra("NAME_Recipe", recipe);
+        intent.putExtra("navigate", "remove");
         startActivity(intent);
     }
 }

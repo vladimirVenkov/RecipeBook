@@ -40,6 +40,7 @@ public class AddRecipeFragment extends Fragment {
 
         mButton.setOnClickListener((View view1) -> {
             mName = view.findViewById(R.id.enter_name_recipe);
+            //todo not same name allowed check here !
             mIngredients = view.findViewById(R.id.enter_ingredients_recipe);
             mCookingOperations = view.findViewById(R.id.enter_cooking_operations_recipe);
             mRecipe = new Recipe(mName.getText().toString(),

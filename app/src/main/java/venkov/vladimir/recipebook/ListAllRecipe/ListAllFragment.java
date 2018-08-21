@@ -49,6 +49,7 @@ public class ListAllFragment extends Fragment implements RecipeListFragment.OnRe
                 RecipeDetailsActivity.class
                 );
         intent.putExtra("NAME_Recipe", recipe);
+        intent.putExtra("navigate", "details");
         startActivity(intent);
     }
 }

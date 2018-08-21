@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +44,12 @@ public class RecipeListFragment extends Fragment implements AdapterView.OnItemCl
 
         mFirebaseRepository.getAll(recipes -> {
             for (Recipe recipe : recipes) {
+
+                if (recipe.getDeleted()) {
+                    Toast.makeText(getContext(), recipe.getName() + recipe.getDeleted(), Toast.LENGTH_LONG);
+                    continue;
+                }
+
                 mListOfRecipiesAdapter.add(recipe.name);
                 mListOfRecipies.put(recipe.name, recipe);
             }

@@ -6,7 +6,7 @@ public class Recipe implements Serializable{
     public String name;
     public String ingredients;
     public String cookingOperations; //public needed for firebase
-
+    public Boolean isDeleted;
 
     public Recipe() {
         //needed for firebase
@@ -17,8 +17,16 @@ public class Recipe implements Serializable{
         setName(name);
         setIngredients(ingredients);
         setCookingOperations(cookingOperations);
+        isDeleted = false;
     }
 
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
+    }
     public String getName() {
         return name;
     }

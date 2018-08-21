@@ -5,10 +5,38 @@
     android:layout_height="match_parent"
     tools:context=".Remove.RemoveThisRecipeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/add_recipe_here_String" />
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/recipe_details_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </FrameLayout>
+
+        <TextView
+        android:id="@+id/remove_message"
+        android:layout_below="@id/recipe_details_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/are_you_sure"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="@color/md_cyan_A700"
+            />
+        <Button
+            android:id="@+id/YES_button"
+            android:layout_below="@id/remove_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yes_i_am_sure_delete_this_recipe"/>
+        <Button
+            android:id="@+id/NO_button"
+            android:layout_below="@id/YES_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_i_don_t_want_to_delete_this_recipe"/>
+
+    </RelativeLayout>
 
 </FrameLayout>

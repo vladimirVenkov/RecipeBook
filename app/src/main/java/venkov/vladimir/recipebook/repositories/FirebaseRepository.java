@@ -31,10 +31,12 @@ public class FirebaseRepository<T> implements Repository<T> {
                 });
     }
 
-
+//
 //    @Override
 //    public void add(T item, Consumer<T> action) {
-//
+//        mDb.collection(mCollectionName)
+//                .add(item)
+//                .addOnCompleteListener(task -> action.accept(item));
 //    }
 
     @Override
